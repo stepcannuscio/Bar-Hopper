@@ -9,20 +9,34 @@
 import UIKit
 import Firebase
 import GooglePlaces
+import FacebookCore
+import FacebookLogin
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+  
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         GMSPlacesClient.provideAPIKey("AIzaSyD4EuMTEIxOstsgZa1QDsa_LK-9s_N0IqA")
         FirebaseApp.configure()
         // Override point for customization after application launch.
+        
+      
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+      
+    }
+    
+
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

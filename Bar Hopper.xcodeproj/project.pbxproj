@@ -8,10 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		0CC63DC6636B6130CB7AD358 /* Pods_Bar_Hopper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 793476BCC996725A4DCD4B9E /* Pods_Bar_Hopper.framework */; };
-		56BA78E021BEF8CF00C19168 /* GoogleService-Info (6).plist in Resources */ = {isa = PBXBuildFile; fileRef = 56BA78DF21BEF8CF00C19168 /* GoogleService-Info (6).plist */; };
+		56BA78E021BEF8CF00C19168 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56BA78DF21BEF8CF00C19168 /* GoogleService-Info.plist */; };
 		56BA78E221BEF91800C19168 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78E121BEF91800C19168 /* Bar.swift */; };
+		56BA78E421BEFBA100C19168 /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78E321BEFBA100C19168 /* Bars.swift */; };
+		56BA78E621BEFC2600C19168 /* BarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78E521BEFC2600C19168 /* BarListViewController.swift */; };
+		56BA78E821BF004C00C19168 /* BarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78E721BF004C00C19168 /* BarTableViewCell.swift */; };
+		56BA78EA21BF035900C19168 /* BarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78E921BF035900C19168 /* BarDetailViewController.swift */; };
+		56BA78EC21BF0A6C00C19168 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78EB21BF0A6C00C19168 /* Review.swift */; };
+		56BA78EE21BF0A7A00C19168 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78ED21BF0A7A00C19168 /* Reviews.swift */; };
+		56BA78F021BF0A8700C19168 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78EF21BF0A8600C19168 /* Photo.swift */; };
+		56BA78F221BF0A9500C19168 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78F121BF0A9500C19168 /* Photos.swift */; };
+		56BA78F421BF0CBC00C19168 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78F321BF0CBC00C19168 /* ReviewTableViewController.swift */; };
+		56BA78F621BF11DB00C19168 /* Double+roundTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78F521BF11DB00C19168 /* Double+roundTo.swift */; };
+		56BA78F821BF122000C19168 /* BarReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78F721BF122000C19168 /* BarReviewsTableViewCell.swift */; };
+		56BA78FA21BF14AC00C19168 /* BarPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA78F921BF14AC00C19168 /* BarPhotosCollectionViewCell.swift */; };
 		56FF0DA7219E46C100A2A649 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FF0DA6219E46C100A2A649 /* AppDelegate.swift */; };
-		56FF0DA9219E46C100A2A649 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FF0DA8219E46C100A2A649 /* ViewController.swift */; };
 		56FF0DAC219E46C100A2A649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56FF0DAA219E46C100A2A649 /* Main.storyboard */; };
 		56FF0DAE219E46C400A2A649 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56FF0DAD219E46C400A2A649 /* Assets.xcassets */; };
 		56FF0DB1219E46C400A2A649 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56FF0DAF219E46C400A2A649 /* LaunchScreen.storyboard */; };
@@ -20,11 +31,23 @@
 /* Begin PBXFileReference section */
 		0CAD32C6752B7D3FB15AFEEB /* Pods-Bar Hopper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bar Hopper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bar Hopper/Pods-Bar Hopper.debug.xcconfig"; sourceTree = "<group>"; };
 		2E4182485FA65C9FEF586A41 /* Pods-Bar Hopper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bar Hopper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bar Hopper/Pods-Bar Hopper.release.xcconfig"; sourceTree = "<group>"; };
-		56BA78DF21BEF8CF00C19168 /* GoogleService-Info (6).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (6).plist"; sourceTree = "<group>"; };
+		56BA78DF21BEF8CF00C19168 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56BA78E121BEF91800C19168 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		56BA78E321BEFBA100C19168 /* Bars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
+		56BA78E521BEFC2600C19168 /* BarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarListViewController.swift; sourceTree = "<group>"; };
+		56BA78E721BF004C00C19168 /* BarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTableViewCell.swift; sourceTree = "<group>"; };
+		56BA78E921BF035900C19168 /* BarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarDetailViewController.swift; sourceTree = "<group>"; };
+		56BA78EB21BF0A6C00C19168 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		56BA78ED21BF0A7A00C19168 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		56BA78EF21BF0A8600C19168 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		56BA78F121BF0A9500C19168 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		56BA78F321BF0CBC00C19168 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
+		56BA78F521BF11DB00C19168 /* Double+roundTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+roundTo.swift"; sourceTree = "<group>"; };
+		56BA78F721BF122000C19168 /* BarReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarReviewsTableViewCell.swift; sourceTree = "<group>"; };
+		56BA78F921BF14AC00C19168 /* BarPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		56BA78FB21BF1AF500C19168 /* Bar Hopper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bar Hopper.entitlements"; sourceTree = "<group>"; };
 		56FF0DA3219E46C100A2A649 /* Bar Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bar Hopper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56FF0DA6219E46C100A2A649 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		56FF0DA8219E46C100A2A649 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		56FF0DAB219E46C100A2A649 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56FF0DAD219E46C400A2A649 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56FF0DB0219E46C400A2A649 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,14 +97,26 @@
 		56FF0DA5219E46C100A2A649 /* Bar Hopper */ = {
 			isa = PBXGroup;
 			children = (
+				56BA78FB21BF1AF500C19168 /* Bar Hopper.entitlements */,
 				56FF0DA6219E46C100A2A649 /* AppDelegate.swift */,
+				56BA78F521BF11DB00C19168 /* Double+roundTo.swift */,
 				56BA78E121BEF91800C19168 /* Bar.swift */,
-				56FF0DA8219E46C100A2A649 /* ViewController.swift */,
+				56BA78E321BEFBA100C19168 /* Bars.swift */,
+				56BA78EB21BF0A6C00C19168 /* Review.swift */,
+				56BA78ED21BF0A7A00C19168 /* Reviews.swift */,
+				56BA78EF21BF0A8600C19168 /* Photo.swift */,
+				56BA78F121BF0A9500C19168 /* Photos.swift */,
+				56BA78E521BEFC2600C19168 /* BarListViewController.swift */,
+				56BA78E721BF004C00C19168 /* BarTableViewCell.swift */,
+				56BA78E921BF035900C19168 /* BarDetailViewController.swift */,
+				56BA78F321BF0CBC00C19168 /* ReviewTableViewController.swift */,
+				56BA78F721BF122000C19168 /* BarReviewsTableViewCell.swift */,
+				56BA78F921BF14AC00C19168 /* BarPhotosCollectionViewCell.swift */,
 				56FF0DAA219E46C100A2A649 /* Main.storyboard */,
 				56FF0DAD219E46C400A2A649 /* Assets.xcassets */,
 				56FF0DAF219E46C400A2A649 /* LaunchScreen.storyboard */,
 				56FF0DB2219E46C500A2A649 /* Info.plist */,
-				56BA78DF21BEF8CF00C19168 /* GoogleService-Info (6).plist */,
+				56BA78DF21BEF8CF00C19168 /* GoogleService-Info.plist */,
 			);
 			path = "Bar Hopper";
 			sourceTree = "<group>";
@@ -129,6 +164,11 @@
 				TargetAttributes = {
 					56FF0DA2219E46C100A2A649 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -155,7 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56BA78E021BEF8CF00C19168 /* GoogleService-Info (6).plist in Resources */,
+				56BA78E021BEF8CF00C19168 /* GoogleService-Info.plist in Resources */,
 				56FF0DB1219E46C400A2A649 /* LaunchScreen.storyboard in Resources */,
 				56FF0DAE219E46C400A2A649 /* Assets.xcassets in Resources */,
 				56FF0DAC219E46C100A2A649 /* Main.storyboard in Resources */,
@@ -176,6 +216,10 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -198,6 +242,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -282,9 +330,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56FF0DA9219E46C100A2A649 /* ViewController.swift in Sources */,
+				56BA78E821BF004C00C19168 /* BarTableViewCell.swift in Sources */,
+				56BA78E421BEFBA100C19168 /* Bars.swift in Sources */,
+				56BA78EC21BF0A6C00C19168 /* Review.swift in Sources */,
+				56BA78F021BF0A8700C19168 /* Photo.swift in Sources */,
+				56BA78F421BF0CBC00C19168 /* ReviewTableViewController.swift in Sources */,
+				56BA78FA21BF14AC00C19168 /* BarPhotosCollectionViewCell.swift in Sources */,
 				56BA78E221BEF91800C19168 /* Bar.swift in Sources */,
+				56BA78EA21BF035900C19168 /* BarDetailViewController.swift in Sources */,
+				56BA78EE21BF0A7A00C19168 /* Reviews.swift in Sources */,
+				56BA78F621BF11DB00C19168 /* Double+roundTo.swift in Sources */,
 				56FF0DA7219E46C100A2A649 /* AppDelegate.swift in Sources */,
+				56BA78F221BF0A9500C19168 /* Photos.swift in Sources */,
+				56BA78E621BEFC2600C19168 /* BarListViewController.swift in Sources */,
+				56BA78F821BF122000C19168 /* BarReviewsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +424,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -431,6 +491,7 @@
 			baseConfigurationReference = 0CAD32C6752B7D3FB15AFEEB /* Pods-Bar Hopper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Bar Hopper/Bar Hopper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PY2YZGV39;
 				INFOPLIST_FILE = "Bar Hopper/Info.plist";
@@ -450,6 +511,7 @@
 			baseConfigurationReference = 2E4182485FA65C9FEF586A41 /* Pods-Bar Hopper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Bar Hopper/Bar Hopper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PY2YZGV39;
 				INFOPLIST_FILE = "Bar Hopper/Info.plist";

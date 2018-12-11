@@ -14,5 +14,9 @@ target 'Bar Hopper' do
     pod 'Firebase/Firestore'
     pod 'FirebaseUI'
     pod 'SDWebImage', '~> 4.0'
+    pod 'FBSDKLoginKit'
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
+    pod 'FacebookShare'
 
 end

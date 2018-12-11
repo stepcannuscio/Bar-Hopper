@@ -41,5 +41,33 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb251152968889694</string>
+			</array>
+		</dict>
+	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Bar Hopper needs access to the device location in order to show this on a map</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Bar Hopper needs access to the device location in order to show this on a map</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Bar Hopper will need access to your camera in order to post photos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Bar Hopper will need access to your photo library in order to post saved photos</string>
+	<key>FacebookAppID</key>
+	<string>251152968889694</string>
+	<key>FacebookDisplayName</key>
+	<string>Bar Hopper</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 </dict>
 </plist>
