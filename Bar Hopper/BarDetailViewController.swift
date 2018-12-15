@@ -47,7 +47,14 @@ class BarDetailViewController: UIViewController {
         if bar == nil { // We are adding a new record, fields should be editable
             bar = Bar()
         }
-            getLocation()
+        getLocation()
+        
+        //Add Bar Hopper logo to navigation bar
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "bar_hopper logo")
+        imageView.image = image
+        navigationItem.titleView = imageView
         
         
         reviews = Reviews()

@@ -52,6 +52,12 @@ class ReviewTableViewController: UITableViewController {
         if review == nil {
             review = Review()
         }
+        //Add Bar Hopper logo to navigation bar
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "bar_hopper logo")
+        imageView.image = image
+        navigationItem.titleView = imageView
         updateUserInterface()
     }
     

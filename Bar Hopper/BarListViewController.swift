@@ -16,10 +16,11 @@ import FBSDKLoginKit
 import GooglePlaces
 
 
-class BarListViewController: UIViewController {
+class BarListViewController: UIViewController, BarTableViewCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var toolbar: UIToolbar!
+    
+    var newIndexPath = 0
     
     var bar: Bar!
     var bars: Bars!
@@ -31,6 +32,7 @@ class BarListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+   
         
       
         
@@ -41,10 +43,13 @@ class BarListViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.isHidden = true
+        
         if bar == nil {
             bar = Bar()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
         
+        //Add Bar Hopper logo to navigation bar
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
         imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "bar_hopper logo")
@@ -52,27 +57,17 @@ class BarListViewController: UIViewController {
         navigationItem.titleView = imageView
         
         
-        let filterView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        filterView.contentMode = .scaleAspectFit
-        let filterImage = UIImage(named: "filter")
-        filterView.image = filterImage
-       
-        
-        
-        
-        
-        
-        
         bars = Bars()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getLocation()
         navigationController?.setToolbarHidden(false, animated: true)
         bars.loadData {
-//            self.sortBasedOnSegmentPressed()
             self.tableView.reloadData()
         }
+        print("🚗")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -96,6 +91,21 @@ class BarListViewController: UIViewController {
         }
     }
     
+    @objc func loadList(){
+        //load data here
+        print(bars.barArray[0].name)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            print("🏆 Loaded")
+        }
+//        bars.loadData {
+//
+//        }
+//        dispatch_async(dispatch_get_main_queue(),
+//                       { self.tableView.reloadData() })
+        
+    }
+    
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -103,13 +113,48 @@ class BarListViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+//    func dismissViewController() {
+//        if let presenter = presentingViewController as? FilterViewController {
+//       
+//            self.tableView.reloadData()
+//        }
+//        dismiss(animated: true, completion: nil)
+//    }
+    
+    
+    func buttonTapped(cell: BarTableViewCell) {
+        guard let indexPath = self.tableView.indexPath(for: cell) else {
+            // Note, this shouldn't happen - how did the user tap on a button that wasn't on screen?
+            return
+        }
+        newIndexPath = indexPath.row
+        performSegue(withIdentifier: "UpdateSegue", sender: nil)
+       
+        
+        //  Do whatever you need to do with the indexPath
+        
+        print("Button tapped on row \(indexPath.row)")
+    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowSegue" {
             let destination = segue.destination as! BarDetailViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow!
             destination.bar = bars.barArray[selectedIndexPath.row]
-        } else {
+        } else if segue.identifier == "UpdateSegue" {
+            let destination = segue.destination as! UpdateViewController
+            let selectedIndexPath = newIndexPath
+            destination.bar = bars.barArray[selectedIndexPath]
+            print(selectedIndexPath)
+        } else if segue.identifier == "FilterSegue" {
+            let destination = segue.destination as! FilterViewController
+            destination.bars = bars
+            destination.bars.barArray = destination.bars.barArray
+            
+        }
+ 
+        else {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 tableView.deselectRow(at: selectedIndexPath, animated: true)
             }
@@ -168,6 +213,7 @@ extension BarListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BarTableViewCell
+        cell.delegate = self
         cell.configureCell(bar: bars.barArray[indexPath.row])
         return cell
 

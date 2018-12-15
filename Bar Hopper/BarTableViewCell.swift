@@ -9,7 +9,19 @@
 import UIKit
 import CoreLocation
 
+protocol BarTableViewCellDelegate: class {
+    func buttonTapped(cell: BarTableViewCell)
+}
+
 class BarTableViewCell: UITableViewCell {
+    
+    
+        
+    
+        
+    
+        
+    
     
     @IBOutlet weak var crowdedIndicatorImage: UIImageView!
     
@@ -20,6 +32,13 @@ class BarTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
 
     var bar: Bar!
+    
+    var delegate: BarTableViewCellDelegate?
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.delegate = nil
+    }
     
     
     func configureCell(bar: Bar) {
@@ -44,7 +63,7 @@ class BarTableViewCell: UITableViewCell {
     }
     
     @IBAction func updateButton(_ sender: UIButton) {
+        self.delegate?.buttonTapped(cell: self)
     }
-    
     
 }

@@ -17,6 +17,8 @@ class Bars {
         db = Firestore.firestore()
     }
     
+    
+    
     func loadData(completed: @escaping () -> ()) {
         
         db.collection("bars").addSnapshotListener { (querySnapshot, error) in
