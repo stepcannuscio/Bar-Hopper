@@ -25,17 +25,13 @@ class BarListViewController: UIViewController, BarTableViewCellDelegate {
     var bar: Bar!
     var bars: Bars!
     var authUI: FUIAuth!
-//    var barUser: barUser!
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
-//    @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        
-      
-        
         authUI = FUIAuth.defaultAuthUI()
         authUI?.delegate = self
         
@@ -47,6 +43,8 @@ class BarListViewController: UIViewController, BarTableViewCellDelegate {
         if bar == nil {
             bar = Bar()
         }
+        
+        //Add observer in notification center to get notified when FilterViewController is dismissed
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
         
         //Add Bar Hopper logo to navigation bar
@@ -67,7 +65,6 @@ class BarListViewController: UIViewController, BarTableViewCellDelegate {
         bars.loadData {
             self.tableView.reloadData()
         }
-        print("🚗")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -86,23 +83,14 @@ class BarListViewController: UIViewController, BarTableViewCellDelegate {
             present(authUI.authViewController(), animated: true, completion: nil)
         } else {
             tableView.isHidden = false
-//            barUser = barUser(user: currentUser!)
-//            barUser.saveIfNewUser()
         }
     }
     
     @objc func loadList(){
         //load data here
-        print(bars.barArray[0].name)
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            print("🏆 Loaded")
         }
-//        bars.loadData {
-//
-//        }
-//        dispatch_async(dispatch_get_main_queue(),
-//                       { self.tableView.reloadData() })
         
     }
     
@@ -113,15 +101,7 @@ class BarListViewController: UIViewController, BarTableViewCellDelegate {
         present(alertController, animated: true, completion: nil)
     }
     
-//    func dismissViewController() {
-//        if let presenter = presentingViewController as? FilterViewController {
-//       
-//            self.tableView.reloadData()
-//        }
-//        dismiss(animated: true, completion: nil)
-//    }
-    
-    
+    //Function called when update button is tapped
     func buttonTapped(cell: BarTableViewCell) {
         guard let indexPath = self.tableView.indexPath(for: cell) else {
             // Note, this shouldn't happen - how did the user tap on a button that wasn't on screen?
@@ -129,11 +109,7 @@ class BarListViewController: UIViewController, BarTableViewCellDelegate {
         }
         newIndexPath = indexPath.row
         performSegue(withIdentifier: "UpdateSegue", sender: nil)
-       
-        
-        //  Do whatever you need to do with the indexPath
-        
-        print("Button tapped on row \(indexPath.row)")
+
     }
 
     
@@ -151,10 +127,7 @@ class BarListViewController: UIViewController, BarTableViewCellDelegate {
             let destination = segue.destination as! FilterViewController
             destination.bars = bars
             destination.bars.barArray = destination.bars.barArray
-            
-        }
- 
-        else {
+        } else {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 tableView.deselectRow(at: selectedIndexPath, animated: true)
             }
@@ -165,10 +138,7 @@ class BarListViewController: UIViewController, BarTableViewCellDelegate {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
-        
-        
     }
-    
     
     @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
         do {
@@ -183,28 +153,6 @@ class BarListViewController: UIViewController, BarTableViewCellDelegate {
         }
     }
 }
-    
-//    func sortBasedOnSegmentPressed() {
-//        switch sortSegmentedControl.selectedSegmentIndex {
-//        case 0: //A-Z
-//            bars.barArray.sort(by: {$0.name < $1.name})
-//        case 1: //Closest
-//            bars.barArray.sort(by: {$0.location.distance(from: currentLocation) < $1.location.distance(from: currentLocation)} )
-//        case 2: //Avg. Rating
-//            print("TODO")
-//        default:
-//            print("*** ERROR: Hey, you shouldn't have gotten here. Our segmented control only has 3 segments")
-//
-//
-//        }
-//        tableView.reloadData()
-//    }
-    
-//    @IBAction func sortSegmentPressed(_ sender: UISegmentedControl) {
-//        sortBasedOnSegmentPressed()
-//    }
-//
-//}
 
 extension BarListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -232,9 +180,6 @@ extension BarListViewController: FUIAuthDelegate {
         if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
             return true
         }
-        //other URL handling goes here.
-//
-//        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
        
         return false
     }
@@ -250,11 +195,6 @@ extension BarListViewController: FUIAuthDelegate {
                     print("No 🎲 \(error)")
                     return
                 }
-                
-                // User is signed in
-                // ...
-            
-
             self.tableView.isHidden = false
             print("*** We signed in with the user \(user.email ?? "unknown email")")
             }

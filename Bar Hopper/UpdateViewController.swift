@@ -27,8 +27,6 @@ class UpdateViewController: UIViewController {
         blurEffectView.frame = self.view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        
-//        view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
         view.insertSubview(blurEffectView, aboveSubview: updateView)
         view.insertSubview(blurEffectView, belowSubview: updateView)
         updateView.layer.cornerRadius = updateView.frame.size.width / 12

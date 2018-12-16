@@ -25,12 +25,9 @@ class FilterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getLocation()
-       
         
-        
+        //round out edges of filter box
         filterView.layer.cornerRadius = filterView.frame.size.width / 12
-  
-
        
     }
   
@@ -108,12 +105,8 @@ class FilterViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         
     }
-    
-   
-    
-    
-}
 
+}
 
 extension FilterViewController: CLLocationManagerDelegate {
     
@@ -160,7 +153,6 @@ extension FilterViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last
         print("Current location is \(currentLocation.coordinate.longitude), \(currentLocation.coordinate.latitude)")
-//        sortBasedOnSegmentPressed()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

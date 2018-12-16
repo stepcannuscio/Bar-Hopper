@@ -160,7 +160,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem image="filter" id="dRJ-oq-jBm">
-                            <inset key="imageInsets" minX="-225" minY="6" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageInsets" minX="-232" minY="9" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="EW7-Ij-4oC" kind="presentation" identifier="FilterSegue" modalPresentationStyle="overCurrentContext" id="ou2-RL-pax"/>

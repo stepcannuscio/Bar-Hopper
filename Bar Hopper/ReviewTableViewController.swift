@@ -40,10 +40,6 @@ class ReviewTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //hide keyboard if we tap outside of a field
-//        let tap = UITapGestureRecognizer(target: self.view, action:  #selector(UIView.endEditing(_:)))
-//        tap.cancelsTouchesInView = false
-//        self.view.addGestureRecognizer(tap)
         
         guard bar != nil else {
             print("**** ERROR: Did not have a valid spot in ReviewDetailViewController")
@@ -72,17 +68,14 @@ class ReviewTableViewController: UITableViewController {
         dateFormatter.timeStyle = .none
         reviewDateLabel.text = "posted: \(dateFormatter.string(from: review.date))"
         if review.documentID == "" { //This is a new review
-//            addBordersToEditableObjects()
         } else {
             if review.reviewerUserID == Auth.auth().currentUser?.email { //This review was posted by current user
                 self.navigationItem.leftItemsSupplementBackButton = false
                 saveBarButton.title = "Update"
-//                addBordersToEditableObjects()
                 deleteButton.isHidden = false
             } else { //This review was posted by a different user
                 cancelBarButton.title = ""
                 saveBarButton.title = ""
-//                postedByLabel.text = "Posted by: \(review.reviewerUserID)"
                 //disable stars
                 for starImage in starButtonCollection {
                     starImage.backgroundColor = UIColor.white
@@ -96,12 +89,7 @@ class ReviewTableViewController: UITableViewController {
             }
         }
     }
-//
-//    func addBordersToEditableObjects() {
-//        reviewTitleField.addBorder(width: 0.5, radius: 5.0, color: .black)
-//        reviewTextView.addBorder(width: 0.5, radius: 5.0, color: .black)
-//        buttonsBackgroundView.addBorder(width: 0.5, radius: 5.0, color: .black)
-//    }
+
     
     func enableDisableSaveButton() {
         if reviewTitleField.text != "" {

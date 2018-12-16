@@ -106,15 +106,7 @@ class BarDetailViewController: UIViewController {
             
         }
     }
-//
-//    func disableTextEditing() {
-//        nameField.backgroundColor = UIColor.clear
-//        nameField.isEnabled = false
-//        nameField.noBorder()
-//        addressField.backgroundColor = UIColor.clear
-//        addressField.isEnabled = false
-//        addressField.noBorder()
-//    }
+
     
     func saveCancelAlert(title: String, message: String, segueIdentifier: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -123,7 +115,6 @@ class BarDetailViewController: UIViewController {
                 self.saveButton.title = "Done"
                 self.cancelButton.title = ""
                 self.navigationController?.setToolbarHidden(true, animated: true)
-//                self.disableTextEditing()
                 if segueIdentifier == "AddReview" {
                     self.performSegue(withIdentifier: segueIdentifier, sender: nil)
                 } else {
@@ -182,18 +173,6 @@ class BarDetailViewController: UIViewController {
         
     }
     
-    
-//
-//    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
-//        saveButton.isEnabled = !(nameLabel.text == "")
-//    }
-//    @IBAction func textFieldReturnPressed(_ sender: UITextField) {
-//        sender.resignFirstResponder()
-//        bar.name = nameLabel.text!
-//        bar.address = addressLabel.text!
-//        updateUserInterface()
-//    }
-//
     //MARK: Actions
     
     @IBAction func photoButtonPressed(_ sender: UIButton) {
@@ -214,8 +193,6 @@ class BarDetailViewController: UIViewController {
 
     }
     
-    
-
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         bar.name = nameLabel.text!
         bar.address = addressLabel.text!
@@ -231,7 +208,6 @@ class BarDetailViewController: UIViewController {
         leaveViewController()
     }
 }
-
 
 extension BarDetailViewController: CLLocationManagerDelegate {
     
